@@ -1,0 +1,1534 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.2                     
+******************************************************************************
+>> Linked Sat Jul 31 10:22:44 2021
+
+OUTPUT FILE NAME:   <Lab17_Control.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00010971
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  MAIN                  00000000   00040000  00010d72  0002f28e  R  X
+  INFO                  00200000   00004000  00000000  00004000  R  X
+  SRAM_CODE             01000000   00010000  000034eb  0000cb15  RW X
+  SRAM_DATA             20000000   00010000  000034eb  0000cb15  RW  
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00010d78   00010d78    r-x
+  00000000    00000000    000000e4   000000e4    r-- .intvecs
+  000000e4    000000e4    00010b86   00010b86    r-x .text
+  00010c6c    00010c6c    00000090   00000090    r-- .const
+  00010d00    00010d00    00000078   00000078    r-- .cinit
+20000000    20000000    000032f0   00000000    rw-
+  20000000    20000000    00002a76   00000000    rw- .bss
+  20002a78    20002a78    00000475   00000000    rw- .data
+  20002ef0    20002ef0    00000400   00000000    rw- .sysmem
+2000fe00    2000fe00    00000200   00000000    rw-
+  2000fe00    2000fe00    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    000000e4     
+                  00000000    000000e4     startup_msp432p401r_ccs.obj (.intvecs:retain)
+
+.text      0    000000e4    00010b86     
+                  000000e4    0000d5e0     bmi160.obj (.text)
+                  0000d6c4    00000c28     bmi160_support.obj (.text)
+                  0000e2ec    000006c8     TExaS.obj (.text)
+                  0000e9b4    00000420     PWM.obj (.text)
+                  0000edd4    00000374     PIDController_main.obj (.text)
+                  0000f148    00000360     i2c_driver.obj (.text)
+                  0000f4a8    0000032c     system_msp432p401r.obj (.text)
+                  0000f7d4    00000170     Motor.obj (.text)
+                  0000f944    00000158     rtsv7M4_T_le_v4SPD16_eabi.lib : e_atan2f.c.obj (.text:atan2f)
+                  0000fa9c    00000150                                   : s_atanf.c.obj (.text:atanf)
+                  0000fbec    00000108     TA3InputCapture.obj (.text)
+                  0000fcf4    00000104     msp432p4xx_driverlib.lib : cs.o (.text:CS_getDCOFrequency)
+                  0000fdf8    000000fc     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_mul_t2.asm.obj (.text)
+                  0000fef4    000000e0     msp432p4xx_driverlib.lib : cs.o (.text:CS_initClockSignal)
+                  0000ffd4    000000dc                              : pcm.o (.text:__PCM_setPowerModeAdvanced)
+                  000100b0    000000b0                              : pcm.o (.text:__PCM_setCoreVoltageLevelAdvanced)
+                  00010160    0000009c                              : cs.o (.text:CS_startHFXTWithTimeout)
+                  000101fc    0000009c                              : cs.o (.text:_CSComputeCLKFrequency)
+                  00010298    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  00010334    00000090     TimerA1.obj (.text)
+                  000103c4    00000084     ClockSys.obj (.text)
+                  00010448    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.asm.obj (.text)
+                  000104c2    00000002     --HOLE-- [fill = 0]
+                  000104c4    00000078     Bump.obj (.text)
+                  0001053c    00000070     msp432p4xx_driverlib.lib : cs.o (.text:_CSGetHFXTFrequency)
+                  000105ac    0000006e     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_tos_t2.asm.obj (.text)
+                  0001061a    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00010682    00000002     --HOLE-- [fill = 0]
+                  00010684    00000064     msp432p4xx_driverlib.lib : interrupt.o (.text:Interrupt_disableInterrupt)
+                  000106e8    00000064                              : interrupt.o (.text:Interrupt_enableInterrupt)
+                  0001074c    00000050                              : sysctl.o (.text:SysCtl_getTLVInfo)
+                  0001079c    0000004c                              : gpio.o (.text:GPIO_setAsPeripheralModuleFunctionOutputPin)
+                  000107e8    0000004c                              : cs.o (.text:_CSGetDOCFrequency)
+                  00010834    00000048                              : cs.o (.text:_CSGetDividerValue)
+                  0001087c    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  000108c0    0000003e     msp432p4xx_driverlib.lib : i2c.o (.text:I2C_initMaster)
+                  000108fe    00000002     --HOLE-- [fill = 0]
+                  00010900    00000038                              : i2c.o (.text:I2C_masterSendMultiByteStart)
+                  00010938    00000038     rtsv7M4_T_le_v4SPD16_eabi.lib : fs_tod_t2.asm.obj (.text)
+                  00010970    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  000109a4    00000030     msp432p4xx_driverlib.lib : i2c.o (.text:I2C_masterSendMultiByteStop)
+                  000109d4    0000002c                              : pcm.o (.text:PCM_getCoreVoltageLevel)
+                  00010a00    0000002a                              : pcm.o (.text:PCM_getPowerMode)
+                  00010a2a    00000002     --HOLE-- [fill = 0]
+                  00010a2c    00000028                              : flash.o (.text:FlashCtl_setWaitState)
+                  00010a54    00000026     demo_sysctl.obj (.text)
+                  00010a7a    00000002     --HOLE-- [fill = 0]
+                  00010a7c    00000024     msp432p4xx_driverlib.lib : cs.o (.text:CS_clearInterruptFlag)
+                  00010aa0    00000024     CortexM.obj (.text)
+                  00010ac4    00000024     msp432p4xx_driverlib.lib : i2c.o (.text:I2C_masterSendMultiByteNext)
+                  00010ae8    00000018                              : cs.o (.text:CS_getMCLK)
+                  00010b00    00000018                              : cs.o (.text:CS_getSMCLK)
+                  00010b18    00000018                              : wdt_a.o (.text:WDT_A_clearTimer)
+                  00010b30    00000018                              : wdt_a.o (.text:WDT_A_holdTimer)
+                  00010b48    00000014                              : cs.o (.text:CS_setExternalClockSourceFrequency)
+                  00010b5c    00000014                              : i2c.o (.text:I2C_isBusBusy)
+                  00010b70    00000014                              : wdt_a.o (.text:WDT_A_initWatchdogTimer)
+                  00010b84    00000010                              : i2c.o (.text:I2C_masterReceiveStart)
+                  00010b94    00000010                              : sysctl.o (.text:SysCtl_disableNMISource)
+                  00010ba4    00000010                              : sysctl.o (.text:SysCtl_enableNMISource)
+                  00010bb4    0000000e                              : i2c.o (.text:I2C_clearInterruptFlag)
+                  00010bc2    0000000e                              : i2c.o (.text:I2C_disableInterrupt)
+                  00010bd0    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00010bde    0000000e     startup_msp432p401r_ccs.obj (.text)
+                  00010bec    0000000c     msp432p4xx_driverlib.lib : i2c.o (.text:I2C_disableModule)
+                  00010bf8    0000000c                              : i2c.o (.text:I2C_enableModule)
+                  00010c04    0000000c                              : pcm.o (.text:PCM_getPowerState)
+                  00010c10    0000000c                              : sysctl.o (.text:SysCtl_getNMISourceStatus)
+                  00010c1c    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
+                  00010c28    00000008     msp432p4xx_driverlib.lib : i2c.o (.text:I2C_enableInterrupt)
+                  00010c30    00000008                              : pcm.o (.text:PCM_setCoreVoltageLevel)
+                  00010c38    00000008                              : pcm.o (.text:PCM_setPowerMode)
+                  00010c40    00000006                              : cs.o (.text:CS_startHFXT)
+                  00010c46    00000006                              : i2c.o (.text:I2C_getEnabledInterruptStatus)
+                  00010c4c    00000006                              : i2c.o (.text:I2C_getInterruptStatus)
+                  00010c52    00000006                              : i2c.o (.text:I2C_masterReceiveMultiByteNext)
+                  00010c58    00000006     demo_sysctl.obj (.text:SysCtlDelay)
+                  00010c5e    00000004     msp432p4xx_driverlib.lib : i2c.o (.text:I2C_setSlaveAddress)
+                  00010c62    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00010c66    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    00010c6c    00000090     
+                  00010c6c    00000040     msp432p4xx_driverlib.lib : interrupt.o (.const)
+                  00010cac    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : s_atanf.c.obj (.const:$O1$$)
+                  00010ce0    0000000c     bmi160.obj (.const:yas532_version_ac_coef)
+                  00010cec    00000008     bmi160.obj (.const:v_calib_data$2)
+                  00010cf4    00000005     bmi160.obj (.const:.string:v_correct_u8$1)
+                  00010cf9    00000003     bmi160.obj (.const:.string:INVALID_OFFSET)
+
+.cinit     0    00010d00    00000078     
+                  00010d00    00000053     (.cinit..data.load) [load image, compression = lzss]
+                  00010d53    00000001     --HOLE-- [fill = 0]
+                  00010d54    0000000c     (__TI_handler_table)
+                  00010d60    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00010d68    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.binit     0    00000000    00000000     
+
+.bss       0    20000000    00002a76     UNINITIALIZED
+                  20000000    00000fa0     (.common:angleBuffer)
+                  20000fa0    00000fa0     (.common:dutyBuffer)
+                  20001f40    0000036c     (.common:accel_fifo)
+                  200022ac    0000036c     (.common:gyro_fifo)
+                  20002618    0000036c     (.common:mag_fifo)
+                  20002984    00000070     bmi160.obj (.bss:yas532_data)
+                  200029f4    00000014     (.common:s_bmi160)
+                  20002a08    00000010     bmi160.obj (.bss:mag_trim)
+                  20002a18    00000006     (.common:accelData)
+                  20002a1e    00000006     (.common:accelxyz)
+                  20002a24    00000006     (.common:gyroxyz)
+                  20002a2a    00000002     (.common:gyroData_x)
+                  20002a2c    00000004     bmi160.obj (.bss)
+                  20002a30    00000004     (.common:Error)
+                  20002a34    00000004     (.common:Error_old)
+                  20002a38    00000004     (.common:PeriodicTask2)
+                  20002a3c    00000004     (.common:TimerA1Task)
+                  20002a40    00000004     (.common:Ud)
+                  20002a44    00000004     (.common:Ui)
+                  20002a48    00000004     (.common:Up)
+                  20002a4c    00000004     (.common:Upid)
+                  20002a50    00000004     (.common:compDeg_fp)
+                  20002a54    00000004     (.common:g_ui32ByteCount)
+                  20002a58    00000004     (.common:gyroDeg_fp)
+                  20002a5c    00000004     (.common:hfxtFreq)
+                  20002a60    00000004     (.common:lfxtFreq)
+                  20002a64    00000004     (.common:pData)
+                  20002a68    00000004     (.common:pitch)
+                  20002a6c    00000004     (.common:pitch_fp)
+                  20002a70    00000003     bmi160.obj (.bss:akm_asa_data)
+                  20002a73    00000001     (.common:LogicData)
+                  20002a74    00000001     (.common:ui8DummyRead)
+                  20002a75    00000001     (.common:ui8Status)
+
+.data      0    20002a78    00000475     UNINITIALIZED
+                  20002a78    00000400     bmi160.obj (.data:v_fifo_data_u8)
+                  20002e78    00000030     msp432p4xx_driverlib.lib : gpio.o (.data:GPIO_PORT_TO_BASE)
+                  20002ea8    00000014     i2c_driver.obj (.data:i2cConfig)
+                  20002ebc    00000010     PIDController_main.obj (.data)
+                  20002ecc    0000000c     TExaS.obj (.data)
+                  20002ed8    00000008     TA3InputCapture.obj (.data)
+                  20002ee0    00000008     bmi160.obj (.data)
+                  20002ee8    00000004     system_msp432p401r.obj (.data)
+                  20002eec    00000001     i2c_driver.obj (.data)
+
+.sysmem    0    20002ef0    00000400     UNINITIALIZED
+                  20002ef0    00000010     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.c.obj (.sysmem)
+                  20002f00    000003f0     --HOLE--
+
+.stack     0    2000fe00    00000200     UNINITIALIZED
+                  2000fe00    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  2000fe04    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                        code    ro data   rw data
+       ------                        ----    -------   -------
+    .\
+       PIDController_main.obj        884     0         16128  
+       TExaS.obj                     1736    0         34     
+       PWM.obj                       1056    0         0      
+       system_msp432p401r.obj        812     0         8      
+       Motor.obj                     368     0         0      
+       TA3InputCapture.obj           264     0         16     
+       startup_msp432p401r_ccs.obj   14      228       0      
+       TimerA1.obj                   144     0         8      
+       Bump.obj                      120     0         0      
+       CortexM.obj                   36      0         0      
+    +--+-----------------------------+-------+---------+---------+
+       Total:                        5434    228       16194  
+                                                              
+    .\BoardSupportPackage\src\
+       bmi160.obj                    54752   28        7590   
+       bmi160_support.obj            3112    0         64     
+       i2c_driver.obj                864     0         62     
+       ClockSys.obj                  132     0         0      
+       demo_sysctl.obj               44      0         0      
+    +--+-----------------------------+-------+---------+---------+
+       Total:                        58904   28        7716   
+                                                              
+    ../BoardSupportPackage/DriverLib/msp432p4xx_driverlib.lib
+       cs.o                          1166    0         16     
+       pcm.o                         510     0         0      
+       i2c.o                         320     0         0      
+       interrupt.o                   200     64        0      
+       gpio.o                        76      0         96     
+       sysctl.o                      124     0         0      
+       wdt_a.o                       68      0         0      
+       flash.o                       40      0         0      
+    +--+-----------------------------+-------+---------+---------+
+       Total:                        2504    64        112    
+                                                              
+    C:\ti\ccs1020\ccs\tools\compiler\ti-cgt-arm_20.2.2.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       s_atanf.c.obj                 336     52        0      
+       e_atan2f.c.obj                344     0         0      
+       fd_mul_t2.asm.obj             252     0         0      
+       memcpy_t2.asm.obj             156     0         0      
+       memset_t2.asm.obj             122     0         0      
+       fd_tos_t2.asm.obj             110     0         0      
+       copy_decompress_lzss.c.obj    104     0         0      
+       autoinit.c.obj                68      0         0      
+       fs_tod_t2.asm.obj             56      0         0      
+       boot_cortex_m.c.obj           52      0         0      
+       copy_decompress_none.c.obj    14      0         0      
+       copy_zero_init.c.obj          12      0         0      
+       exit.c.obj                    4       0         0      
+       pre_init.c.obj                4       0         0      
+    +--+-----------------------------+-------+---------+---------+
+       Total:                        1634    52        0      
+                                                              
+       Heap:                         0       0         2048   
+       Stack:                        0       0         1024   
+       Linker Generated:             0       119       0      
+    +--+-----------------------------+-------+---------+---------+
+       Grand Total:                  68476   491       27094  
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00010d68 records: 2, size/record: 8, table size: 16
+	.data: load addr=00010d00, load size=00000053 bytes, run addr=20002a78, run size=00000475 bytes, compression=lzss
+	.bss: load addr=00010d60, load size=00000008 bytes, run addr=20000000, run size=00002a76 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00010d54 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                             
+-------   ----                                             
+00010beb  ADC14_IRQHandler                                 
+0000e6f9  ADC_Init                                         
+00010beb  AES256_IRQHandler                                
+0000ee8d  AdjustMotors                                     
+000104c5  Bump_Init                                        
+000104f9  Bump_Read                                        
+00010beb  BusFault_Handler                                 
+00010c67  C$$EXIT                                          
+00010beb  COMP_E0_IRQHandler                               
+00010beb  COMP_E1_IRQHandler                               
+00010beb  CS_IRQHandler                                    
+00010a7d  CS_clearInterruptFlag                            
+0000fcf5  CS_getDCOFrequency                               
+00010ae9  CS_getMCLK                                       
+00010b01  CS_getSMCLK                                      
+0000fef5  CS_initClockSignal                               
+00010b49  CS_setExternalClockSourceFrequency               
+00010c41  CS_startHFXT                                     
+00010161  CS_startHFXTWithTimeout                          
+20002ed8  CaptureTask0                                     
+20002edc  CaptureTask1                                     
+00010433  ClockSys_GetSysFreq                              
+000103c5  ClockSys_SetMaxFreq                              
+00010beb  DMA_ERR_IRQHandler                               
+00010beb  DMA_INT0_IRQHandler                              
+00010beb  DMA_INT1_IRQHandler                              
+00010beb  DMA_INT2_IRQHandler                              
+00010beb  DMA_INT3_IRQHandler                              
+00010beb  DebugMon_Handler                                 
+00010beb  Default_Handler                                  
+00010a55  DelayMs                                          
+00010aa1  DisableInterrupts                                
+00010beb  EUSCIA0_IRQHandler                               
+00010beb  EUSCIA1_IRQHandler                               
+00010beb  EUSCIA2_IRQHandler                               
+00010beb  EUSCIA3_IRQHandler                               
+00010beb  EUSCIB0_IRQHandler                               
+0000f3e1  EUSCIB1_IRQHandler                               
+0000f3e1  EUSCIB1_IRQHandler                               
+00010beb  EUSCIB2_IRQHandler                               
+00010beb  EUSCIB3_IRQHandler                               
+00010aa7  EnableInterrupts                                 
+00010ab7  EndCritical                                      
+20002a30  Error                                            
+20002a34  Error_old                                        
+00010beb  FLCTL_IRQHandler                                 
+00010beb  FPU_IRQHandler                                   
+00010a2d  FlashCtl_setWaitState                            
+0001079d  GPIO_setAsPeripheralModuleFunctionOutputPin      
+00010beb  HardFault_Handler                                
+00010bb5  I2C_clearInterruptFlag                           
+00010bc3  I2C_disableInterrupt                             
+00010bed  I2C_disableModule                                
+00010c29  I2C_enableInterrupt                              
+00010bf9  I2C_enableModule                                 
+00010c47  I2C_getEnabledInterruptStatus                    
+00010c4d  I2C_getInterruptStatus                           
+000108c1  I2C_initMaster                                   
+00010b5d  I2C_isBusBusy                                    
+00010c53  I2C_masterReceiveMultiByteNext                   
+00010b85  I2C_masterReceiveStart                           
+00010ac5  I2C_masterSendMultiByteNext                      
+00010901  I2C_masterSendMultiByteStart                     
+000109a5  I2C_masterSendMultiByteStop                      
+00010c5f  I2C_setSlaveAddress                              
+00010685  Interrupt_disableInterrupt                       
+000106e9  Interrupt_enableInterrupt                        
+20002ec8  Kd                                               
+20002ec4  Ki                                               
+20002ec0  Kp                                               
+0000e2ed  LogicAnalyzer                                    
+0000e2f7  LogicAnalyzer_P1                                 
+0000e3cd  LogicAnalyzer_P10                                
+0000e305  LogicAnalyzer_P2                                 
+0000e3db  LogicAnalyzer_P27_P26_P82_P92_P104_P105          
+0000e313  LogicAnalyzer_P2_7654                            
+0000e323  LogicAnalyzer_P3                                 
+0000e331  LogicAnalyzer_P4                                 
+0000e34f  LogicAnalyzer_P4_765320                          
+0000e33f  LogicAnalyzer_P4_765432                          
+0000e387  LogicAnalyzer_P5                                 
+0000e413  LogicAnalyzer_P55_P54_P27_P26_P37_P36            
+0000e395  LogicAnalyzer_P6                                 
+0000e3a3  LogicAnalyzer_P7                                 
+0000e3b1  LogicAnalyzer_P8                                 
+0000e3bf  LogicAnalyzer_P9                                 
+20002a73  LogicData                                        
+0000edd5  MeasureAngle                                     
+00010beb  MemManage_Handler                                
+0000f8f3  Motor_Backward                                   
+0000f84f  Motor_Forward                                    
+0000f7d5  Motor_Init                                       
+0000f8b9  Motor_Left                                       
+0000f87f  Motor_Right                                      
+0000f835  Motor_Stop                                       
+00010beb  NMI_Handler                                      
+00010beb  PCM_IRQHandler                                   
+000109d5  PCM_getCoreVoltageLevel                          
+00010a01  PCM_getPowerMode                                 
+00010c05  PCM_getPowerState                                
+00010c31  PCM_setCoreVoltageLevel                          
+00010c39  PCM_setPowerMode                                 
+0000ef73  PIDController                                    
+00010beb  PORT1_IRQHandler                                 
+00010beb  PORT2_IRQHandler                                 
+00010beb  PORT3_IRQHandler                                 
+00010beb  PORT4_IRQHandler                                 
+00010beb  PORT5_IRQHandler                                 
+00010beb  PORT6_IRQHandler                                 
+00010beb  PSS_IRQHandler                                   
+0000ea9f  PWM_Duty1                                        
+0000eabf  PWM_Duty2                                        
+0000eb63  PWM_Duty3                                        
+0000eb83  PWM_Duty4                                        
+0000e9b5  PWM_Init1                                        
+0000ea1b  PWM_Init12                                       
+0000eadf  PWM_Init34                                       
+0000eccb  PWM_RobotArmDuty0                                
+0000ecf1  PWM_RobotArmDuty1                                
+0000ed17  PWM_RobotArmDuty2                                
+0000eceb  PWM_RobotArmGetDuty0                             
+0000ed11  PWM_RobotArmGetDuty1                             
+0000ed37  PWM_RobotArmGetDuty2                             
+0000eba3  PWM_RobotArmInit                                 
+00010beb  PendSV_Handler                                   
+20002a38  PeriodicTask2                                    
+0000e4c1  PeriodicTask2_Init                               
+0000e53b  PeriodicTask2_Stop                               
+00010beb  RTC_C_IRQHandler                                 
+00010bdf  Reset_Handler                                    
+00010beb  SVC_Handler                                      
+0000e43d  Scope                                            
+00010aad  StartCritical                                    
+00010c59  SysCtlDelay                                      
+00010b95  SysCtl_disableNMISource                          
+00010ba5  SysCtl_enableNMISource                           
+00010c11  SysCtl_getNMISourceStatus                        
+0001074d  SysCtl_getTLVInfo                                
+00010beb  SysTick_Handler                                  
+20002ee8  SystemCoreClock                                  
+0000f4a9  SystemCoreClockUpdate                            
+0000f71d  SystemInit                                       
+0000e52b  T32_INT1_IRQHandler                              
+0000e52b  T32_INT1_IRQHandler                              
+00010beb  T32_INT2_IRQHandler                              
+00010beb  T32_INTC_IRQHandler                              
+00010beb  TA0_0_IRQHandler                                 
+00010beb  TA0_N_IRQHandler                                 
+00010395  TA1_0_IRQHandler                                 
+00010395  TA1_0_IRQHandler                                 
+00010beb  TA1_N_IRQHandler                                 
+00010beb  TA2_0_IRQHandler                                 
+00010beb  TA2_N_IRQHandler                                 
+0000fc7d  TA3_0_IRQHandler                                 
+0000fc7d  TA3_0_IRQHandler                                 
+0000fc97  TA3_N_IRQHandler                                 
+0000fc97  TA3_N_IRQHandler                                 
+0000e68d  TExaS_Clear0                                     
+0000e699  TExaS_Clear1                                     
+0000e6ad  TExaS_Clear2                                     
+0000e6b9  TExaS_Clear3                                     
+0000e6c5  TExaS_Clear4                                     
+0000e6c7  TExaS_Clear5                                     
+0000e6d3  TExaS_Clear6                                     
+0000e7bd  TExaS_Init                                       
+20002ed0  TExaS_ScopeErrConflict                           
+20002ecc  TExaS_ScopeErrLostData                           
+20002ed4  TExaS_ScopeWrnReconfig                           
+0000e61b  TExaS_Set                                        
+0000e633  TExaS_Set0                                       
+0000e63f  TExaS_Set1                                       
+0000e64b  TExaS_Set2                                       
+0000e657  TExaS_Set3                                       
+0000e663  TExaS_Set4                                       
+0000e665  TExaS_Set5                                       
+0000e67d  TExaS_Set6                                       
+0000e949  TExaS_Stop                                       
+0000e5d1  TExaS_Task0                                      
+0000e5dd  TExaS_Task1                                      
+0000e5e9  TExaS_Task2                                      
+0000e5f5  TExaS_Task3                                      
+0000e601  TExaS_Task4                                      
+0000e603  TExaS_Task5                                      
+0000e60f  TExaS_Task6                                      
+20002a3c  TimerA1Task                                      
+00010335  TimerA1_Init                                     
+00010389  TimerA1_Stop                                     
+0000fbf9  TimerA3Capture_Init01                            
+0000fcb1  TimerA3Capture_Init02                            
+0000e5a5  UART_InChar                                      
+0000e54b  UART_Init                                        
+0000e5b5  UART_OutChar                                     
+20002a40  Ud                                               
+20002a44  Ui                                               
+20002a48  Up                                               
+20002a4c  Upid                                             
+00010beb  UsageFault_Handler                               
+20002ee0  V_bmm150_maual_auto_condition_u8                 
+20002ee4  V_fifo_time_U32                                  
+4000480c  WDTCTL_SYM                                       
+00010beb  WDT_A_IRQHandler                                 
+00010b19  WDT_A_clearTimer                                 
+00010b31  WDT_A_holdTimer                                  
+00010b71  WDT_A_initWatchdogTimer                          
+00010abf  WaitForInterrupt                                 
+20010000  __STACK_END                                      
+00000200  __STACK_SIZE                                     
+00000400  __SYSMEM_SIZE                                    
+00010d68  __TI_CINIT_Base                                  
+00010d78  __TI_CINIT_Limit                                 
+00010d54  __TI_Handler_Table_Base                          
+00010d60  __TI_Handler_Table_Limit                         
+0001087d  __TI_auto_init_nobinit_nopinit                   
+0001061b  __TI_decompress_lzss                             
+00010bd1  __TI_decompress_none                             
+ffffffff  __TI_pprof_out_hndl                              
+ffffffff  __TI_prof_data_size                              
+ffffffff  __TI_prof_data_start                             
+00000000  __TI_static_base__                               
+00010c1d  __TI_zero_init                                   
+000105ad  __aeabi_d2f                                      
+0000fdf9  __aeabi_dmul                                     
+00010939  __aeabi_f2d                                      
+00010449  __aeabi_memclr                                   
+00010449  __aeabi_memclr4                                  
+00010449  __aeabi_memclr8                                  
+00010299  __aeabi_memcpy                                   
+00010299  __aeabi_memcpy4                                  
+00010299  __aeabi_memcpy8                                  
+0001044b  __aeabi_memset                                   
+0001044b  __aeabi_memset4                                  
+0001044b  __aeabi_memset8                                  
+ffffffff  __binit__                                        
+ffffffff  __c_args__                                       
+UNDEFED   __mpu_init                                       
+2000fe00  __stack                                          
+20000000  __start___llvm_prf_cnts                          
+20000000  __stop___llvm_prf_cnts                           
+00010971  _c_int00_noargs                                  
+20002ef0  _sys_memory                                      
+UNDEFED   _system_post_cinit                               
+00010c63  _system_pre_init                                 
+00010c67  abort                                            
+20002a18  accelData                                        
+20001f40  accel_fifo                                       
+20002a1e  accelxyz                                         
+20000000  angleBuffer                                      
+0000f945  atan2f                                           
+0000fa9d  atanf                                            
+ffffffff  binit                                            
+00007511  bmi160_accel_foc_trigger_xyz                     
+0000ac11  bmi160_bmm150_mag_compensate_X                   
+0000acbb  bmi160_bmm150_mag_compensate_Y                   
+0000ad65  bmi160_bmm150_mag_compensate_Z                   
+0000abb5  bmi160_bmm150_mag_compensate_xyz                 
+0000ae05  bmi160_bmm150_mag_interface_init                 
+0000b2a7  bmi160_bmm150_mag_set_power_mode                 
+0000b0b1  bmi160_bmm150_mag_wakeup                         
+0000c00d  bmi160_bst_akm_compensate_X                      
+0000c03f  bmi160_bst_akm_compensate_Y                      
+0000c071  bmi160_bst_akm_compensate_Z                      
+0000c0a3  bmi160_bst_akm_compensate_xyz                    
+0000bc05  bmi160_bst_akm_mag_interface_init                
+0000c0f1  bmi160_bst_akm_set_powermode                     
+0000caa1  bmi160_bst_yamaha_yas532_calib_values            
+0000c47b  bmi160_bst_yamaha_yas532_mag_interface_init      
+0000d4e1  bmi160_bst_yas532_acquisition_command_register   
+0000c911  bmi160_bst_yas532_magnetic_measure_set_offset    
+0000d069  bmi160_bst_yas532_measurement_xyz_data           
+0000cef5  bmi160_bst_yas532_normal_measurement_data        
+0000c7b1  bmi160_bst_yas532_set_initial_values             
+0000d5a5  bmi160_bst_yas532_set_offset                     
+0000ce59  bmi160_bst_yas532_xy1y2_to_linear                
+000095c1  bmi160_clear_step_counter                        
+0000d701  bmi160_config_running_mode                       
+0000e2b1  bmi160_delay_ms                                  
+00001805  bmi160_fifo_data                                 
+000017a5  bmi160_fifo_length                               
+0000191d  bmi160_get_accel_bw                              
+00000e21  bmi160_get_accel_data_rdy                        
+000021f7  bmi160_get_accel_fifo_filter_data                
+000086ab  bmi160_get_accel_offset_compensation_xaxis       
+00008791  bmi160_get_accel_offset_compensation_yaxis       
+0000887b  bmi160_get_accel_offset_compensation_zaxis       
+00008edb  bmi160_get_accel_offset_enable                   
+0000183f  bmi160_get_accel_output_data_rate                
+00000481  bmi160_get_accel_power_mode_stat                 
+00001ad9  bmi160_get_accel_range                           
+0000829d  bmi160_get_accel_selftest_amp                    
+000080e7  bmi160_get_accel_selftest_axis                   
+000081bf  bmi160_get_accel_selftest_sign                   
+000019ff  bmi160_get_accel_under_sampling_parameter        
+00000d85  bmi160_get_data_rdy_mag                          
+000002b5  bmi160_get_drop_cmd_err                          
+00000219  bmi160_get_err_code                              
+00000351  bmi160_get_error_status                          
+000001cd  bmi160_get_fatal_err                             
+000028a5  bmi160_get_fifo_accel_enable                     
+0000212f  bmi160_get_fifo_down_accel                       
+00001f87  bmi160_get_fifo_down_gyro                        
+00002985  bmi160_get_fifo_gyro_enable                      
+000026f1  bmi160_get_fifo_header_enable                    
+000027cb  bmi160_get_fifo_mag_enable                       
+0000235f  bmi160_get_fifo_stop_on_full                     
+000025ff  bmi160_get_fifo_tag_intr1_enable                 
+00002511  bmi160_get_fifo_tag_intr2_enable                 
+00002437  bmi160_get_fifo_time_enable                      
+000022d1  bmi160_get_fifo_wm                               
+000070db  bmi160_get_foc_accel_x                           
+00007001  bmi160_get_foc_accel_y                           
+00006f3b  bmi160_get_foc_accel_z                           
+0000775b  bmi160_get_foc_gyro_enable                       
+00000ce5  bmi160_get_foc_rdy                               
+00001ce5  bmi160_get_gyro_bw                               
+00000dd3  bmi160_get_gyro_data_rdy                         
+00002055  bmi160_get_gyro_fifo_filter_data                 
+00008961  bmi160_get_gyro_offset_compensation_xaxis        
+00008b31  bmi160_get_gyro_offset_compensation_yaxis        
+00008d09  bmi160_get_gyro_offset_compensation_zaxis        
+00008fab  bmi160_get_gyro_offset_enable                    
+00001bc9  bmi160_get_gyro_output_data_rate                 
+00000433  bmi160_get_gyro_power_mode_stat                  
+00001dbf  bmi160_get_gyro_range                            
+00000c49  bmi160_get_gyro_selftest                         
+00008377  bmi160_get_gyro_selftest_start                   
+00007f33  bmi160_get_gyro_sleep_state                      
+00007d7b  bmi160_get_gyro_sleep_trigger                    
+0000800d  bmi160_get_gyro_wakeup_intr                      
+00007e53  bmi160_get_gyro_wakeup_trigger                   
+00002a5f  bmi160_get_i2c_device_addr                       
+00000267  bmi160_get_i2c_fail_err                          
+00007bc7  bmi160_get_i2c_wdt_enable                        
+00007ae7  bmi160_get_i2c_wdt_select                        
+00007ca1  bmi160_get_if_mode                               
+000041f3  bmi160_get_input_enable                          
+000046ed  bmi160_get_intr_any_motion                       
+00005dbf  bmi160_get_intr_any_motion_durn                  
+00005f53  bmi160_get_intr_any_motion_thres                 
+00005519  bmi160_get_intr_data_rdy                         
+00004a31  bmi160_get_intr_double_tap                       
+00003ae5  bmi160_get_intr_edge_ctrl                        
+00002f23  bmi160_get_intr_enable_0                         
+00003393  bmi160_get_intr_enable_1                         
+000037fb  bmi160_get_intr_enable_2                         
+000051fd  bmi160_get_intr_fifo_full                        
+00005389  bmi160_get_intr_fifo_wm                          
+00004ee1  bmi160_get_intr_flat                             
+00006d83  bmi160_get_intr_flat_hold                        
+00006e63  bmi160_get_intr_flat_hyst                        
+00006cab  bmi160_get_intr_flat_theta                       
+00004561  bmi160_get_intr_high_g                           
+00005cb3  bmi160_get_intr_high_g_durn                      
+00005beb  bmi160_get_intr_high_g_hyst                      
+00005d39  bmi160_get_intr_high_g_thres                     
+00003c6d  bmi160_get_intr_level                            
+0000437f  bmi160_get_intr_low_g                            
+00005937  bmi160_get_intr_low_g_durn                       
+00005a43  bmi160_get_intr_low_g_hyst                       
+00005b11  bmi160_get_intr_low_g_mode                       
+000059bd  bmi160_get_intr_low_g_thres                      
+0000577f  bmi160_get_intr_low_high_source                  
+0000585d  bmi160_get_intr_motion_source                    
+000048a5  bmi160_get_intr_nomotion                         
+00004d4f  bmi160_get_intr_orient                           
+00006bd1  bmi160_get_intr_orient_axes_enable               
+00006879  bmi160_get_intr_orient_blocking                  
+00006953  bmi160_get_intr_orient_hyst                      
+0000679b  bmi160_get_intr_orient_mode                      
+00006a1b  bmi160_get_intr_orient_theta                     
+00006af3  bmi160_get_intr_orient_ud_enable                 
+00003dff  bmi160_get_intr_output_type                      
+0000506d  bmi160_get_intr_pmu_trig                         
+000062f1  bmi160_get_intr_significant_motion_proof         
+0000613d  bmi160_get_intr_significant_motion_select        
+00006217  bmi160_get_intr_significant_motion_skip          
+00004bc3  bmi160_get_intr_single_tap                       
+00005e8b  bmi160_get_intr_slow_no_motion_durn              
+0000605f  bmi160_get_intr_slow_no_motion_select            
+00005fd9  bmi160_get_intr_slow_no_motion_thres             
+000063cb  bmi160_get_intr_tap_durn                         
+000065fb  bmi160_get_intr_tap_quiet                        
+00006521  bmi160_get_intr_tap_shock                        
+000056a5  bmi160_get_intr_tap_source                       
+000066d5  bmi160_get_intr_tap_thres                        
+0000411b  bmi160_get_latch_intr                            
+00002b27  bmi160_get_mag_burst                             
+00000303  bmi160_get_mag_dada_rdy_err                      
+00002cb9  bmi160_get_mag_manual_enable                     
+00000c97  bmi160_get_mag_manual_operation_stat             
+00002bed  bmi160_get_mag_offset                            
+00001e97  bmi160_get_mag_output_data_rate                  
+000003e1  bmi160_get_mag_power_mode_stat                   
+00002d91  bmi160_get_mag_read_addr                         
+00002e17  bmi160_get_mag_write_addr                        
+00002e9d  bmi160_get_mag_write_data                        
+000085e3  bmi160_get_nvm_counter                           
+00007935  bmi160_get_nvm_prog_enable                       
+00000d33  bmi160_get_nvm_rdy                               
+00003f8b  bmi160_get_output_enable                         
+00009701  bmi160_get_paging_enable                         
+0000d6ab  bmi160_get_ptr                                   
+000097db  bmi160_get_pullup_configuration                  
+00000bed  bmi160_get_sensor_time                           
+00008517  bmi160_get_spare0_trim                           
+00007a0f  bmi160_get_spi3                                  
+00008451  bmi160_get_spi_enable                            
+00000f09  bmi160_get_stat0_any_motion_intr                 
+00000fa5  bmi160_get_stat0_double_tap_intr                 
+00001095  bmi160_get_stat0_flat_intr                       
+00001041  bmi160_get_stat0_orient_intr                     
+00000f57  bmi160_get_stat0_pmu_trigger_intr                
+00000ebb  bmi160_get_stat0_significant_intr                
+00000ff3  bmi160_get_stat0_single_tap_intr                 
+00000e6f  bmi160_get_stat0_step_intr                       
+0000117f  bmi160_get_stat1_data_rdy_intr                   
+000011cd  bmi160_get_stat1_fifo_full_intr                  
+0000121b  bmi160_get_stat1_fifo_wm_intr                    
+000010e3  bmi160_get_stat1_high_g_intr                     
+00001131  bmi160_get_stat1_low_g_intr                      
+00001269  bmi160_get_stat1_nomotion_intr                   
+000012b7  bmi160_get_stat2_any_motion_first_x              
+00001303  bmi160_get_stat2_any_motion_first_y              
+00001351  bmi160_get_stat2_any_motion_first_z              
+000013a5  bmi160_get_stat2_any_motion_sign                 
+000013f3  bmi160_get_stat2_tap_first_x                     
+00001441  bmi160_get_stat2_tap_first_y                     
+0000148f  bmi160_get_stat2_tap_first_z                     
+000014dd  bmi160_get_stat2_tap_sign                        
+00001703  bmi160_get_stat3_flat                            
+0000152b  bmi160_get_stat3_high_g_first_x                  
+00001577  bmi160_get_stat3_high_g_first_y                  
+000015c5  bmi160_get_stat3_high_g_first_z                  
+00001613  bmi160_get_stat3_high_g_sign                     
+00001661  bmi160_get_stat3_orient_xy                       
+000016b5  bmi160_get_stat3_orient_z                        
+000090c7  bmi160_get_step_config                           
+00009299  bmi160_get_step_counter_enable                   
+00003a15  bmi160_get_step_detector_enable                  
+00009627  bmi160_get_target_page                           
+00001751  bmi160_get_temp                                  
+0000e217  bmi160_i2c_burst_read                            
+0000e1eb  bmi160_i2c_bus_read                              
+0000e249  bmi160_i2c_bus_write                             
+000000e5  bmi160_init                                      
+0000d6c5  bmi160_initialize_sensor                         
+0000e139  bmi160_interrupt_configuration                   
+000093f1  bmi160_map_significant_motion_intr               
+000094d9  bmi160_map_step_detector_intr                    
+00000a7d  bmi160_read_accel_x                              
+00000b79  bmi160_read_accel_xyz                            
+00000ad1  bmi160_read_accel_y                              
+00000b25  bmi160_read_accel_z                              
+0000b761  bmi160_read_bmm150_mag_trim                      
+0000bf25  bmi160_read_bst_akm_sensitivity_data             
+000098b9  bmi160_read_fifo_header_data                     
+0000a289  bmi160_read_fifo_headerless_mode                 
+00000909  bmi160_read_gyro_x                               
+00000a05  bmi160_read_gyro_xyz                             
+0000095d  bmi160_read_gyro_y                               
+000009b1  bmi160_read_gyro_z                               
+000006d9  bmi160_read_mag_r                                
+000004cf  bmi160_read_mag_x                                
+00000743  bmi160_read_mag_xyz                              
+0000084d  bmi160_read_mag_xyzr                             
+0000057d  bmi160_read_mag_y                                
+0000062b  bmi160_read_mag_z                                
+00000189  bmi160_read_reg                                  
+00009073  bmi160_read_step_count                           
+0000196b  bmi160_set_accel_bw                              
+00002245  bmi160_set_accel_fifo_filter_data                
+000071b9  bmi160_set_accel_foc_trigger                     
+000086f7  bmi160_set_accel_offset_compensation_xaxis       
+000087dd  bmi160_set_accel_offset_compensation_yaxis       
+000088c7  bmi160_set_accel_offset_compensation_zaxis       
+00008f29  bmi160_set_accel_offset_enable                   
+0000188b  bmi160_set_accel_output_data_rate                
+00001b25  bmi160_set_accel_range                           
+000082eb  bmi160_set_accel_selftest_amp                    
+00008133  bmi160_set_accel_selftest_axis                   
+00008211  bmi160_set_accel_selftest_sign                   
+00001a4d  bmi160_set_accel_under_sampling_parameter        
+0000b181  bmi160_set_bmm150_mag_and_secondary_if_power_mode
+0000b405  bmi160_set_bmm150_mag_presetmode                 
+0000c315  bmi160_set_bst_akm_and_secondary_if_powermode    
+000095ed  bmi160_set_command_register                      
+000028f3  bmi160_set_fifo_accel_enable                     
+0000217d  bmi160_set_fifo_down_accel                       
+00001fd3  bmi160_set_fifo_down_gyro                        
+000029d3  bmi160_set_fifo_gyro_enable                      
+0000273f  bmi160_set_fifo_header_enable                    
+00002819  bmi160_set_fifo_mag_enable                       
+000023ab  bmi160_set_fifo_stop_on_full                     
+00002651  bmi160_set_fifo_tag_intr1_enable                 
+0000255f  bmi160_set_fifo_tag_intr2_enable                 
+00002485  bmi160_set_fifo_time_enable                      
+00002325  bmi160_set_fifo_wm                               
+00007129  bmi160_set_foc_accel_x                           
+0000704f  bmi160_set_foc_accel_y                           
+00006f87  bmi160_set_foc_accel_z                           
+000077a9  bmi160_set_foc_gyro_enable                       
+00001d33  bmi160_set_gyro_bw                               
+000020a3  bmi160_set_gyro_fifo_filter_data                 
+00008a15  bmi160_set_gyro_offset_compensation_xaxis        
+00008bed  bmi160_set_gyro_offset_compensation_yaxis        
+00008dbf  bmi160_set_gyro_offset_compensation_zaxis        
+00008ff9  bmi160_set_gyro_offset_enable                    
+00001c15  bmi160_set_gyro_output_data_rate                 
+00001e0b  bmi160_set_gyro_range                            
+000083c5  bmi160_set_gyro_selftest_start                   
+00007f81  bmi160_set_gyro_sleep_state                      
+00007dc7  bmi160_set_gyro_sleep_trigger                    
+0000805b  bmi160_set_gyro_wakeup_intr                      
+00007ea1  bmi160_set_gyro_wakeup_trigger                   
+00002aad  bmi160_set_i2c_device_addr                       
+00007c15  bmi160_set_i2c_wdt_enable                        
+00007b35  bmi160_set_i2c_wdt_select                        
+00007cef  bmi160_set_if_mode                               
+0000428d  bmi160_set_input_enable                          
+00004787  bmi160_set_intr_any_motion                       
+00005e0b  bmi160_set_intr_any_motion_durn                  
+00005f9f  bmi160_set_intr_any_motion_thres                 
+000055b3  bmi160_set_intr_data_rdy                         
+00004acb  bmi160_set_intr_double_tap                       
+00003b7b  bmi160_set_intr_edge_ctrl                        
+000030b9  bmi160_set_intr_enable_0                         
+00003521  bmi160_set_intr_enable_1                         
+000038c3  bmi160_set_intr_enable_2                         
+00005297  bmi160_set_intr_fifo_full                        
+00005423  bmi160_set_intr_fifo_wm                          
+00004f7b  bmi160_set_intr_flat                             
+00006dd1  bmi160_set_intr_flat_hold                        
+00006eaf  bmi160_set_intr_flat_hyst                        
+00006cf7  bmi160_set_intr_flat_theta                       
+000045fb  bmi160_set_intr_high_g                           
+00005cff  bmi160_set_intr_high_g_durn                      
+00005c39  bmi160_set_intr_high_g_hyst                      
+00005d85  bmi160_set_intr_high_g_thres                     
+00003d07  bmi160_set_intr_level                            
+00004413  bmi160_set_intr_low_g                            
+00005983  bmi160_set_intr_low_g_durn                       
+00005a8f  bmi160_set_intr_low_g_hyst                       
+00005b5f  bmi160_set_intr_low_g_mode                       
+00005a09  bmi160_set_intr_low_g_thres                      
+000057d1  bmi160_set_intr_low_high_source                  
+000058ab  bmi160_set_intr_motion_source                    
+0000493f  bmi160_set_intr_nomotion                         
+00004de9  bmi160_set_intr_orient                           
+00006c1f  bmi160_set_intr_orient_axes_enable               
+000068c7  bmi160_set_intr_orient_blocking                  
+000069a1  bmi160_set_intr_orient_hyst                      
+000067ed  bmi160_set_intr_orient_mode                      
+00006a67  bmi160_set_intr_orient_theta                     
+00006b45  bmi160_set_intr_orient_ud_enable                 
+00003e99  bmi160_set_intr_output_type                      
+00005103  bmi160_set_intr_pmu_trig                         
+0000633f  bmi160_set_intr_significant_motion_proof         
+0000618b  bmi160_set_intr_significant_motion_select        
+00006265  bmi160_set_intr_significant_motion_skip          
+00004c5d  bmi160_set_intr_single_tap                       
+00005ed9  bmi160_set_intr_slow_no_motion_durn              
+000060ab  bmi160_set_intr_slow_no_motion_select            
+00006025  bmi160_set_intr_slow_no_motion_thres             
+00006417  bmi160_set_intr_tap_durn                         
+00006649  bmi160_set_intr_tap_quiet                        
+0000656f  bmi160_set_intr_tap_shock                        
+000056f3  bmi160_set_intr_tap_source                       
+00006721  bmi160_set_intr_tap_thres                        
+00004167  bmi160_set_latch_intr                            
+00002b73  bmi160_set_mag_burst                             
+00002d07  bmi160_set_mag_manual_enable                     
+00002c3b  bmi160_set_mag_offset                            
+00001ee3  bmi160_set_mag_output_data_rate                  
+00002ddd  bmi160_set_mag_read_addr                         
+00002e63  bmi160_set_mag_write_addr                        
+00002ee9  bmi160_set_mag_write_data                        
+00008631  bmi160_set_nvm_counter                           
+00007983  bmi160_set_nvm_prog_enable                       
+00004025  bmi160_set_output_enable                         
+0000974f  bmi160_set_paging_enable                         
+00009829  bmi160_set_pullup_configuration                  
+00008569  bmi160_set_spare0_trim                           
+00007a5b  bmi160_set_spi3                                  
+0000849d  bmi160_set_spi_enable                            
+00009185  bmi160_set_step_config                           
+000092e7  bmi160_set_step_counter_enable                   
+00003a6b  bmi160_set_step_detector_enable                  
+00009373  bmi160_set_step_mode                             
+00009675  bmi160_set_target_page                           
+0000e275  bmi160_spi_bus_read                              
+0000e293  bmi160_spi_bus_write                             
+00000145  bmi160_write_reg                                 
+20002eec  burstMode                                        
+20002a50  compDeg_fp                                       
+20000fa0  dutyBuffer                                       
+20002a54  g_ui32ByteCount                                  
+20002a2a  gyroData_x                                       
+20002a58  gyroDeg_fp                                       
+200022ac  gyro_fifo                                        
+20002a24  gyroxyz                                          
+20002ea8  i2cConfig                                        
+0000e1b3  i2c_routine                                      
+0000f187  initI2C                                          
+00000000  interruptVectors                                 
+20002618  mag_fifo                                         
+0000f035  main                                             
+00010299  memcpy                                           
+00010451  memset                                           
+20002a64  pData                                            
+20002a68  pitch                                            
+20002a6c  pitch_fp                                         
+0000f309  readBurstI2C                                     
+0000f23b  readI2C                                          
+200029f4  s_bmi160                                         
+0000e1d5  spi_routine                                      
+0000fbed  ta3dummy                                         
+20002ebc  time                                             
+20002a74  ui8DummyRead                                     
+20002a75  ui8Status                                        
+20002a78  v_fifo_data_u8                                   
+0000f1a5  writeI2C                                         
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                             
+-------   ----                                             
+00000000  __TI_static_base__                               
+00000000  interruptVectors                                 
+000000e5  bmi160_init                                      
+00000145  bmi160_write_reg                                 
+00000189  bmi160_read_reg                                  
+000001cd  bmi160_get_fatal_err                             
+00000200  __STACK_SIZE                                     
+00000219  bmi160_get_err_code                              
+00000267  bmi160_get_i2c_fail_err                          
+000002b5  bmi160_get_drop_cmd_err                          
+00000303  bmi160_get_mag_dada_rdy_err                      
+00000351  bmi160_get_error_status                          
+000003e1  bmi160_get_mag_power_mode_stat                   
+00000400  __SYSMEM_SIZE                                    
+00000433  bmi160_get_gyro_power_mode_stat                  
+00000481  bmi160_get_accel_power_mode_stat                 
+000004cf  bmi160_read_mag_x                                
+0000057d  bmi160_read_mag_y                                
+0000062b  bmi160_read_mag_z                                
+000006d9  bmi160_read_mag_r                                
+00000743  bmi160_read_mag_xyz                              
+0000084d  bmi160_read_mag_xyzr                             
+00000909  bmi160_read_gyro_x                               
+0000095d  bmi160_read_gyro_y                               
+000009b1  bmi160_read_gyro_z                               
+00000a05  bmi160_read_gyro_xyz                             
+00000a7d  bmi160_read_accel_x                              
+00000ad1  bmi160_read_accel_y                              
+00000b25  bmi160_read_accel_z                              
+00000b79  bmi160_read_accel_xyz                            
+00000bed  bmi160_get_sensor_time                           
+00000c49  bmi160_get_gyro_selftest                         
+00000c97  bmi160_get_mag_manual_operation_stat             
+00000ce5  bmi160_get_foc_rdy                               
+00000d33  bmi160_get_nvm_rdy                               
+00000d85  bmi160_get_data_rdy_mag                          
+00000dd3  bmi160_get_gyro_data_rdy                         
+00000e21  bmi160_get_accel_data_rdy                        
+00000e6f  bmi160_get_stat0_step_intr                       
+00000ebb  bmi160_get_stat0_significant_intr                
+00000f09  bmi160_get_stat0_any_motion_intr                 
+00000f57  bmi160_get_stat0_pmu_trigger_intr                
+00000fa5  bmi160_get_stat0_double_tap_intr                 
+00000ff3  bmi160_get_stat0_single_tap_intr                 
+00001041  bmi160_get_stat0_orient_intr                     
+00001095  bmi160_get_stat0_flat_intr                       
+000010e3  bmi160_get_stat1_high_g_intr                     
+00001131  bmi160_get_stat1_low_g_intr                      
+0000117f  bmi160_get_stat1_data_rdy_intr                   
+000011cd  bmi160_get_stat1_fifo_full_intr                  
+0000121b  bmi160_get_stat1_fifo_wm_intr                    
+00001269  bmi160_get_stat1_nomotion_intr                   
+000012b7  bmi160_get_stat2_any_motion_first_x              
+00001303  bmi160_get_stat2_any_motion_first_y              
+00001351  bmi160_get_stat2_any_motion_first_z              
+000013a5  bmi160_get_stat2_any_motion_sign                 
+000013f3  bmi160_get_stat2_tap_first_x                     
+00001441  bmi160_get_stat2_tap_first_y                     
+0000148f  bmi160_get_stat2_tap_first_z                     
+000014dd  bmi160_get_stat2_tap_sign                        
+0000152b  bmi160_get_stat3_high_g_first_x                  
+00001577  bmi160_get_stat3_high_g_first_y                  
+000015c5  bmi160_get_stat3_high_g_first_z                  
+00001613  bmi160_get_stat3_high_g_sign                     
+00001661  bmi160_get_stat3_orient_xy                       
+000016b5  bmi160_get_stat3_orient_z                        
+00001703  bmi160_get_stat3_flat                            
+00001751  bmi160_get_temp                                  
+000017a5  bmi160_fifo_length                               
+00001805  bmi160_fifo_data                                 
+0000183f  bmi160_get_accel_output_data_rate                
+0000188b  bmi160_set_accel_output_data_rate                
+0000191d  bmi160_get_accel_bw                              
+0000196b  bmi160_set_accel_bw                              
+000019ff  bmi160_get_accel_under_sampling_parameter        
+00001a4d  bmi160_set_accel_under_sampling_parameter        
+00001ad9  bmi160_get_accel_range                           
+00001b25  bmi160_set_accel_range                           
+00001bc9  bmi160_get_gyro_output_data_rate                 
+00001c15  bmi160_set_gyro_output_data_rate                 
+00001ce5  bmi160_get_gyro_bw                               
+00001d33  bmi160_set_gyro_bw                               
+00001dbf  bmi160_get_gyro_range                            
+00001e0b  bmi160_set_gyro_range                            
+00001e97  bmi160_get_mag_output_data_rate                  
+00001ee3  bmi160_set_mag_output_data_rate                  
+00001f87  bmi160_get_fifo_down_gyro                        
+00001fd3  bmi160_set_fifo_down_gyro                        
+00002055  bmi160_get_gyro_fifo_filter_data                 
+000020a3  bmi160_set_gyro_fifo_filter_data                 
+0000212f  bmi160_get_fifo_down_accel                       
+0000217d  bmi160_set_fifo_down_accel                       
+000021f7  bmi160_get_accel_fifo_filter_data                
+00002245  bmi160_set_accel_fifo_filter_data                
+000022d1  bmi160_get_fifo_wm                               
+00002325  bmi160_set_fifo_wm                               
+0000235f  bmi160_get_fifo_stop_on_full                     
+000023ab  bmi160_set_fifo_stop_on_full                     
+00002437  bmi160_get_fifo_time_enable                      
+00002485  bmi160_set_fifo_time_enable                      
+00002511  bmi160_get_fifo_tag_intr2_enable                 
+0000255f  bmi160_set_fifo_tag_intr2_enable                 
+000025ff  bmi160_get_fifo_tag_intr1_enable                 
+00002651  bmi160_set_fifo_tag_intr1_enable                 
+000026f1  bmi160_get_fifo_header_enable                    
+0000273f  bmi160_set_fifo_header_enable                    
+000027cb  bmi160_get_fifo_mag_enable                       
+00002819  bmi160_set_fifo_mag_enable                       
+000028a5  bmi160_get_fifo_accel_enable                     
+000028f3  bmi160_set_fifo_accel_enable                     
+00002985  bmi160_get_fifo_gyro_enable                      
+000029d3  bmi160_set_fifo_gyro_enable                      
+00002a5f  bmi160_get_i2c_device_addr                       
+00002aad  bmi160_set_i2c_device_addr                       
+00002b27  bmi160_get_mag_burst                             
+00002b73  bmi160_set_mag_burst                             
+00002bed  bmi160_get_mag_offset                            
+00002c3b  bmi160_set_mag_offset                            
+00002cb9  bmi160_get_mag_manual_enable                     
+00002d07  bmi160_set_mag_manual_enable                     
+00002d91  bmi160_get_mag_read_addr                         
+00002ddd  bmi160_set_mag_read_addr                         
+00002e17  bmi160_get_mag_write_addr                        
+00002e63  bmi160_set_mag_write_addr                        
+00002e9d  bmi160_get_mag_write_data                        
+00002ee9  bmi160_set_mag_write_data                        
+00002f23  bmi160_get_intr_enable_0                         
+000030b9  bmi160_set_intr_enable_0                         
+00003393  bmi160_get_intr_enable_1                         
+00003521  bmi160_set_intr_enable_1                         
+000037fb  bmi160_get_intr_enable_2                         
+000038c3  bmi160_set_intr_enable_2                         
+00003a15  bmi160_get_step_detector_enable                  
+00003a6b  bmi160_set_step_detector_enable                  
+00003ae5  bmi160_get_intr_edge_ctrl                        
+00003b7b  bmi160_set_intr_edge_ctrl                        
+00003c6d  bmi160_get_intr_level                            
+00003d07  bmi160_set_intr_level                            
+00003dff  bmi160_get_intr_output_type                      
+00003e99  bmi160_set_intr_output_type                      
+00003f8b  bmi160_get_output_enable                         
+00004025  bmi160_set_output_enable                         
+0000411b  bmi160_get_latch_intr                            
+00004167  bmi160_set_latch_intr                            
+000041f3  bmi160_get_input_enable                          
+0000428d  bmi160_set_input_enable                          
+0000437f  bmi160_get_intr_low_g                            
+00004413  bmi160_set_intr_low_g                            
+00004561  bmi160_get_intr_high_g                           
+000045fb  bmi160_set_intr_high_g                           
+000046ed  bmi160_get_intr_any_motion                       
+00004787  bmi160_set_intr_any_motion                       
+000048a5  bmi160_get_intr_nomotion                         
+0000493f  bmi160_set_intr_nomotion                         
+00004a31  bmi160_get_intr_double_tap                       
+00004acb  bmi160_set_intr_double_tap                       
+00004bc3  bmi160_get_intr_single_tap                       
+00004c5d  bmi160_set_intr_single_tap                       
+00004d4f  bmi160_get_intr_orient                           
+00004de9  bmi160_set_intr_orient                           
+00004ee1  bmi160_get_intr_flat                             
+00004f7b  bmi160_set_intr_flat                             
+0000506d  bmi160_get_intr_pmu_trig                         
+00005103  bmi160_set_intr_pmu_trig                         
+000051fd  bmi160_get_intr_fifo_full                        
+00005297  bmi160_set_intr_fifo_full                        
+00005389  bmi160_get_intr_fifo_wm                          
+00005423  bmi160_set_intr_fifo_wm                          
+00005519  bmi160_get_intr_data_rdy                         
+000055b3  bmi160_set_intr_data_rdy                         
+000056a5  bmi160_get_intr_tap_source                       
+000056f3  bmi160_set_intr_tap_source                       
+0000577f  bmi160_get_intr_low_high_source                  
+000057d1  bmi160_set_intr_low_high_source                  
+0000585d  bmi160_get_intr_motion_source                    
+000058ab  bmi160_set_intr_motion_source                    
+00005937  bmi160_get_intr_low_g_durn                       
+00005983  bmi160_set_intr_low_g_durn                       
+000059bd  bmi160_get_intr_low_g_thres                      
+00005a09  bmi160_set_intr_low_g_thres                      
+00005a43  bmi160_get_intr_low_g_hyst                       
+00005a8f  bmi160_set_intr_low_g_hyst                       
+00005b11  bmi160_get_intr_low_g_mode                       
+00005b5f  bmi160_set_intr_low_g_mode                       
+00005beb  bmi160_get_intr_high_g_hyst                      
+00005c39  bmi160_set_intr_high_g_hyst                      
+00005cb3  bmi160_get_intr_high_g_durn                      
+00005cff  bmi160_set_intr_high_g_durn                      
+00005d39  bmi160_get_intr_high_g_thres                     
+00005d85  bmi160_set_intr_high_g_thres                     
+00005dbf  bmi160_get_intr_any_motion_durn                  
+00005e0b  bmi160_set_intr_any_motion_durn                  
+00005e8b  bmi160_get_intr_slow_no_motion_durn              
+00005ed9  bmi160_set_intr_slow_no_motion_durn              
+00005f53  bmi160_get_intr_any_motion_thres                 
+00005f9f  bmi160_set_intr_any_motion_thres                 
+00005fd9  bmi160_get_intr_slow_no_motion_thres             
+00006025  bmi160_set_intr_slow_no_motion_thres             
+0000605f  bmi160_get_intr_slow_no_motion_select            
+000060ab  bmi160_set_intr_slow_no_motion_select            
+0000613d  bmi160_get_intr_significant_motion_select        
+0000618b  bmi160_set_intr_significant_motion_select        
+00006217  bmi160_get_intr_significant_motion_skip          
+00006265  bmi160_set_intr_significant_motion_skip          
+000062f1  bmi160_get_intr_significant_motion_proof         
+0000633f  bmi160_set_intr_significant_motion_proof         
+000063cb  bmi160_get_intr_tap_durn                         
+00006417  bmi160_set_intr_tap_durn                         
+00006521  bmi160_get_intr_tap_shock                        
+0000656f  bmi160_set_intr_tap_shock                        
+000065fb  bmi160_get_intr_tap_quiet                        
+00006649  bmi160_set_intr_tap_quiet                        
+000066d5  bmi160_get_intr_tap_thres                        
+00006721  bmi160_set_intr_tap_thres                        
+0000679b  bmi160_get_intr_orient_mode                      
+000067ed  bmi160_set_intr_orient_mode                      
+00006879  bmi160_get_intr_orient_blocking                  
+000068c7  bmi160_set_intr_orient_blocking                  
+00006953  bmi160_get_intr_orient_hyst                      
+000069a1  bmi160_set_intr_orient_hyst                      
+00006a1b  bmi160_get_intr_orient_theta                     
+00006a67  bmi160_set_intr_orient_theta                     
+00006af3  bmi160_get_intr_orient_ud_enable                 
+00006b45  bmi160_set_intr_orient_ud_enable                 
+00006bd1  bmi160_get_intr_orient_axes_enable               
+00006c1f  bmi160_set_intr_orient_axes_enable               
+00006cab  bmi160_get_intr_flat_theta                       
+00006cf7  bmi160_set_intr_flat_theta                       
+00006d83  bmi160_get_intr_flat_hold                        
+00006dd1  bmi160_set_intr_flat_hold                        
+00006e63  bmi160_get_intr_flat_hyst                        
+00006eaf  bmi160_set_intr_flat_hyst                        
+00006f3b  bmi160_get_foc_accel_z                           
+00006f87  bmi160_set_foc_accel_z                           
+00007001  bmi160_get_foc_accel_y                           
+0000704f  bmi160_set_foc_accel_y                           
+000070db  bmi160_get_foc_accel_x                           
+00007129  bmi160_set_foc_accel_x                           
+000071b9  bmi160_set_accel_foc_trigger                     
+00007511  bmi160_accel_foc_trigger_xyz                     
+0000775b  bmi160_get_foc_gyro_enable                       
+000077a9  bmi160_set_foc_gyro_enable                       
+00007935  bmi160_get_nvm_prog_enable                       
+00007983  bmi160_set_nvm_prog_enable                       
+00007a0f  bmi160_get_spi3                                  
+00007a5b  bmi160_set_spi3                                  
+00007ae7  bmi160_get_i2c_wdt_select                        
+00007b35  bmi160_set_i2c_wdt_select                        
+00007bc7  bmi160_get_i2c_wdt_enable                        
+00007c15  bmi160_set_i2c_wdt_enable                        
+00007ca1  bmi160_get_if_mode                               
+00007cef  bmi160_set_if_mode                               
+00007d7b  bmi160_get_gyro_sleep_trigger                    
+00007dc7  bmi160_set_gyro_sleep_trigger                    
+00007e53  bmi160_get_gyro_wakeup_trigger                   
+00007ea1  bmi160_set_gyro_wakeup_trigger                   
+00007f33  bmi160_get_gyro_sleep_state                      
+00007f81  bmi160_set_gyro_sleep_state                      
+0000800d  bmi160_get_gyro_wakeup_intr                      
+0000805b  bmi160_set_gyro_wakeup_intr                      
+000080e7  bmi160_get_accel_selftest_axis                   
+00008133  bmi160_set_accel_selftest_axis                   
+000081bf  bmi160_get_accel_selftest_sign                   
+00008211  bmi160_set_accel_selftest_sign                   
+0000829d  bmi160_get_accel_selftest_amp                    
+000082eb  bmi160_set_accel_selftest_amp                    
+00008377  bmi160_get_gyro_selftest_start                   
+000083c5  bmi160_set_gyro_selftest_start                   
+00008451  bmi160_get_spi_enable                            
+0000849d  bmi160_set_spi_enable                            
+00008517  bmi160_get_spare0_trim                           
+00008569  bmi160_set_spare0_trim                           
+000085e3  bmi160_get_nvm_counter                           
+00008631  bmi160_set_nvm_counter                           
+000086ab  bmi160_get_accel_offset_compensation_xaxis       
+000086f7  bmi160_set_accel_offset_compensation_xaxis       
+00008791  bmi160_get_accel_offset_compensation_yaxis       
+000087dd  bmi160_set_accel_offset_compensation_yaxis       
+0000887b  bmi160_get_accel_offset_compensation_zaxis       
+000088c7  bmi160_set_accel_offset_compensation_zaxis       
+00008961  bmi160_get_gyro_offset_compensation_xaxis        
+00008a15  bmi160_set_gyro_offset_compensation_xaxis        
+00008b31  bmi160_get_gyro_offset_compensation_yaxis        
+00008bed  bmi160_set_gyro_offset_compensation_yaxis        
+00008d09  bmi160_get_gyro_offset_compensation_zaxis        
+00008dbf  bmi160_set_gyro_offset_compensation_zaxis        
+00008edb  bmi160_get_accel_offset_enable                   
+00008f29  bmi160_set_accel_offset_enable                   
+00008fab  bmi160_get_gyro_offset_enable                    
+00008ff9  bmi160_set_gyro_offset_enable                    
+00009073  bmi160_read_step_count                           
+000090c7  bmi160_get_step_config                           
+00009185  bmi160_set_step_config                           
+00009299  bmi160_get_step_counter_enable                   
+000092e7  bmi160_set_step_counter_enable                   
+00009373  bmi160_set_step_mode                             
+000093f1  bmi160_map_significant_motion_intr               
+000094d9  bmi160_map_step_detector_intr                    
+000095c1  bmi160_clear_step_counter                        
+000095ed  bmi160_set_command_register                      
+00009627  bmi160_get_target_page                           
+00009675  bmi160_set_target_page                           
+00009701  bmi160_get_paging_enable                         
+0000974f  bmi160_set_paging_enable                         
+000097db  bmi160_get_pullup_configuration                  
+00009829  bmi160_set_pullup_configuration                  
+000098b9  bmi160_read_fifo_header_data                     
+0000a289  bmi160_read_fifo_headerless_mode                 
+0000abb5  bmi160_bmm150_mag_compensate_xyz                 
+0000ac11  bmi160_bmm150_mag_compensate_X                   
+0000acbb  bmi160_bmm150_mag_compensate_Y                   
+0000ad65  bmi160_bmm150_mag_compensate_Z                   
+0000ae05  bmi160_bmm150_mag_interface_init                 
+0000b0b1  bmi160_bmm150_mag_wakeup                         
+0000b181  bmi160_set_bmm150_mag_and_secondary_if_power_mode
+0000b2a7  bmi160_bmm150_mag_set_power_mode                 
+0000b405  bmi160_set_bmm150_mag_presetmode                 
+0000b761  bmi160_read_bmm150_mag_trim                      
+0000bc05  bmi160_bst_akm_mag_interface_init                
+0000bf25  bmi160_read_bst_akm_sensitivity_data             
+0000c00d  bmi160_bst_akm_compensate_X                      
+0000c03f  bmi160_bst_akm_compensate_Y                      
+0000c071  bmi160_bst_akm_compensate_Z                      
+0000c0a3  bmi160_bst_akm_compensate_xyz                    
+0000c0f1  bmi160_bst_akm_set_powermode                     
+0000c315  bmi160_set_bst_akm_and_secondary_if_powermode    
+0000c47b  bmi160_bst_yamaha_yas532_mag_interface_init      
+0000c7b1  bmi160_bst_yas532_set_initial_values             
+0000c911  bmi160_bst_yas532_magnetic_measure_set_offset    
+0000caa1  bmi160_bst_yamaha_yas532_calib_values            
+0000ce59  bmi160_bst_yas532_xy1y2_to_linear                
+0000cef5  bmi160_bst_yas532_normal_measurement_data        
+0000d069  bmi160_bst_yas532_measurement_xyz_data           
+0000d4e1  bmi160_bst_yas532_acquisition_command_register   
+0000d5a5  bmi160_bst_yas532_set_offset                     
+0000d6ab  bmi160_get_ptr                                   
+0000d6c5  bmi160_initialize_sensor                         
+0000d701  bmi160_config_running_mode                       
+0000e139  bmi160_interrupt_configuration                   
+0000e1b3  i2c_routine                                      
+0000e1d5  spi_routine                                      
+0000e1eb  bmi160_i2c_bus_read                              
+0000e217  bmi160_i2c_burst_read                            
+0000e249  bmi160_i2c_bus_write                             
+0000e275  bmi160_spi_bus_read                              
+0000e293  bmi160_spi_bus_write                             
+0000e2b1  bmi160_delay_ms                                  
+0000e2ed  LogicAnalyzer                                    
+0000e2f7  LogicAnalyzer_P1                                 
+0000e305  LogicAnalyzer_P2                                 
+0000e313  LogicAnalyzer_P2_7654                            
+0000e323  LogicAnalyzer_P3                                 
+0000e331  LogicAnalyzer_P4                                 
+0000e33f  LogicAnalyzer_P4_765432                          
+0000e34f  LogicAnalyzer_P4_765320                          
+0000e387  LogicAnalyzer_P5                                 
+0000e395  LogicAnalyzer_P6                                 
+0000e3a3  LogicAnalyzer_P7                                 
+0000e3b1  LogicAnalyzer_P8                                 
+0000e3bf  LogicAnalyzer_P9                                 
+0000e3cd  LogicAnalyzer_P10                                
+0000e3db  LogicAnalyzer_P27_P26_P82_P92_P104_P105          
+0000e413  LogicAnalyzer_P55_P54_P27_P26_P37_P36            
+0000e43d  Scope                                            
+0000e4c1  PeriodicTask2_Init                               
+0000e52b  T32_INT1_IRQHandler                              
+0000e52b  T32_INT1_IRQHandler                              
+0000e53b  PeriodicTask2_Stop                               
+0000e54b  UART_Init                                        
+0000e5a5  UART_InChar                                      
+0000e5b5  UART_OutChar                                     
+0000e5d1  TExaS_Task0                                      
+0000e5dd  TExaS_Task1                                      
+0000e5e9  TExaS_Task2                                      
+0000e5f5  TExaS_Task3                                      
+0000e601  TExaS_Task4                                      
+0000e603  TExaS_Task5                                      
+0000e60f  TExaS_Task6                                      
+0000e61b  TExaS_Set                                        
+0000e633  TExaS_Set0                                       
+0000e63f  TExaS_Set1                                       
+0000e64b  TExaS_Set2                                       
+0000e657  TExaS_Set3                                       
+0000e663  TExaS_Set4                                       
+0000e665  TExaS_Set5                                       
+0000e67d  TExaS_Set6                                       
+0000e68d  TExaS_Clear0                                     
+0000e699  TExaS_Clear1                                     
+0000e6ad  TExaS_Clear2                                     
+0000e6b9  TExaS_Clear3                                     
+0000e6c5  TExaS_Clear4                                     
+0000e6c7  TExaS_Clear5                                     
+0000e6d3  TExaS_Clear6                                     
+0000e6f9  ADC_Init                                         
+0000e7bd  TExaS_Init                                       
+0000e949  TExaS_Stop                                       
+0000e9b5  PWM_Init1                                        
+0000ea1b  PWM_Init12                                       
+0000ea9f  PWM_Duty1                                        
+0000eabf  PWM_Duty2                                        
+0000eadf  PWM_Init34                                       
+0000eb63  PWM_Duty3                                        
+0000eb83  PWM_Duty4                                        
+0000eba3  PWM_RobotArmInit                                 
+0000eccb  PWM_RobotArmDuty0                                
+0000eceb  PWM_RobotArmGetDuty0                             
+0000ecf1  PWM_RobotArmDuty1                                
+0000ed11  PWM_RobotArmGetDuty1                             
+0000ed17  PWM_RobotArmDuty2                                
+0000ed37  PWM_RobotArmGetDuty2                             
+0000edd5  MeasureAngle                                     
+0000ee8d  AdjustMotors                                     
+0000ef73  PIDController                                    
+0000f035  main                                             
+0000f187  initI2C                                          
+0000f1a5  writeI2C                                         
+0000f23b  readI2C                                          
+0000f309  readBurstI2C                                     
+0000f3e1  EUSCIB1_IRQHandler                               
+0000f3e1  EUSCIB1_IRQHandler                               
+0000f4a9  SystemCoreClockUpdate                            
+0000f71d  SystemInit                                       
+0000f7d5  Motor_Init                                       
+0000f835  Motor_Stop                                       
+0000f84f  Motor_Forward                                    
+0000f87f  Motor_Right                                      
+0000f8b9  Motor_Left                                       
+0000f8f3  Motor_Backward                                   
+0000f945  atan2f                                           
+0000fa9d  atanf                                            
+0000fbed  ta3dummy                                         
+0000fbf9  TimerA3Capture_Init01                            
+0000fc7d  TA3_0_IRQHandler                                 
+0000fc7d  TA3_0_IRQHandler                                 
+0000fc97  TA3_N_IRQHandler                                 
+0000fc97  TA3_N_IRQHandler                                 
+0000fcb1  TimerA3Capture_Init02                            
+0000fcf5  CS_getDCOFrequency                               
+0000fdf9  __aeabi_dmul                                     
+0000fef5  CS_initClockSignal                               
+00010161  CS_startHFXTWithTimeout                          
+00010299  __aeabi_memcpy                                   
+00010299  __aeabi_memcpy4                                  
+00010299  __aeabi_memcpy8                                  
+00010299  memcpy                                           
+00010335  TimerA1_Init                                     
+00010389  TimerA1_Stop                                     
+00010395  TA1_0_IRQHandler                                 
+00010395  TA1_0_IRQHandler                                 
+000103c5  ClockSys_SetMaxFreq                              
+00010433  ClockSys_GetSysFreq                              
+00010449  __aeabi_memclr                                   
+00010449  __aeabi_memclr4                                  
+00010449  __aeabi_memclr8                                  
+0001044b  __aeabi_memset                                   
+0001044b  __aeabi_memset4                                  
+0001044b  __aeabi_memset8                                  
+00010451  memset                                           
+000104c5  Bump_Init                                        
+000104f9  Bump_Read                                        
+000105ad  __aeabi_d2f                                      
+0001061b  __TI_decompress_lzss                             
+00010685  Interrupt_disableInterrupt                       
+000106e9  Interrupt_enableInterrupt                        
+0001074d  SysCtl_getTLVInfo                                
+0001079d  GPIO_setAsPeripheralModuleFunctionOutputPin      
+0001087d  __TI_auto_init_nobinit_nopinit                   
+000108c1  I2C_initMaster                                   
+00010901  I2C_masterSendMultiByteStart                     
+00010939  __aeabi_f2d                                      
+00010971  _c_int00_noargs                                  
+000109a5  I2C_masterSendMultiByteStop                      
+000109d5  PCM_getCoreVoltageLevel                          
+00010a01  PCM_getPowerMode                                 
+00010a2d  FlashCtl_setWaitState                            
+00010a55  DelayMs                                          
+00010a7d  CS_clearInterruptFlag                            
+00010aa1  DisableInterrupts                                
+00010aa7  EnableInterrupts                                 
+00010aad  StartCritical                                    
+00010ab7  EndCritical                                      
+00010abf  WaitForInterrupt                                 
+00010ac5  I2C_masterSendMultiByteNext                      
+00010ae9  CS_getMCLK                                       
+00010b01  CS_getSMCLK                                      
+00010b19  WDT_A_clearTimer                                 
+00010b31  WDT_A_holdTimer                                  
+00010b49  CS_setExternalClockSourceFrequency               
+00010b5d  I2C_isBusBusy                                    
+00010b71  WDT_A_initWatchdogTimer                          
+00010b85  I2C_masterReceiveStart                           
+00010b95  SysCtl_disableNMISource                          
+00010ba5  SysCtl_enableNMISource                           
+00010bb5  I2C_clearInterruptFlag                           
+00010bc3  I2C_disableInterrupt                             
+00010bd1  __TI_decompress_none                             
+00010bdf  Reset_Handler                                    
+00010beb  ADC14_IRQHandler                                 
+00010beb  AES256_IRQHandler                                
+00010beb  BusFault_Handler                                 
+00010beb  COMP_E0_IRQHandler                               
+00010beb  COMP_E1_IRQHandler                               
+00010beb  CS_IRQHandler                                    
+00010beb  DMA_ERR_IRQHandler                               
+00010beb  DMA_INT0_IRQHandler                              
+00010beb  DMA_INT1_IRQHandler                              
+00010beb  DMA_INT2_IRQHandler                              
+00010beb  DMA_INT3_IRQHandler                              
+00010beb  DebugMon_Handler                                 
+00010beb  Default_Handler                                  
+00010beb  EUSCIA0_IRQHandler                               
+00010beb  EUSCIA1_IRQHandler                               
+00010beb  EUSCIA2_IRQHandler                               
+00010beb  EUSCIA3_IRQHandler                               
+00010beb  EUSCIB0_IRQHandler                               
+00010beb  EUSCIB2_IRQHandler                               
+00010beb  EUSCIB3_IRQHandler                               
+00010beb  FLCTL_IRQHandler                                 
+00010beb  FPU_IRQHandler                                   
+00010beb  HardFault_Handler                                
+00010beb  MemManage_Handler                                
+00010beb  NMI_Handler                                      
+00010beb  PCM_IRQHandler                                   
+00010beb  PORT1_IRQHandler                                 
+00010beb  PORT2_IRQHandler                                 
+00010beb  PORT3_IRQHandler                                 
+00010beb  PORT4_IRQHandler                                 
+00010beb  PORT5_IRQHandler                                 
+00010beb  PORT6_IRQHandler                                 
+00010beb  PSS_IRQHandler                                   
+00010beb  PendSV_Handler                                   
+00010beb  RTC_C_IRQHandler                                 
+00010beb  SVC_Handler                                      
+00010beb  SysTick_Handler                                  
+00010beb  T32_INT2_IRQHandler                              
+00010beb  T32_INTC_IRQHandler                              
+00010beb  TA0_0_IRQHandler                                 
+00010beb  TA0_N_IRQHandler                                 
+00010beb  TA1_N_IRQHandler                                 
+00010beb  TA2_0_IRQHandler                                 
+00010beb  TA2_N_IRQHandler                                 
+00010beb  UsageFault_Handler                               
+00010beb  WDT_A_IRQHandler                                 
+00010bed  I2C_disableModule                                
+00010bf9  I2C_enableModule                                 
+00010c05  PCM_getPowerState                                
+00010c11  SysCtl_getNMISourceStatus                        
+00010c1d  __TI_zero_init                                   
+00010c29  I2C_enableInterrupt                              
+00010c31  PCM_setCoreVoltageLevel                          
+00010c39  PCM_setPowerMode                                 
+00010c41  CS_startHFXT                                     
+00010c47  I2C_getEnabledInterruptStatus                    
+00010c4d  I2C_getInterruptStatus                           
+00010c53  I2C_masterReceiveMultiByteNext                   
+00010c59  SysCtlDelay                                      
+00010c5f  I2C_setSlaveAddress                              
+00010c63  _system_pre_init                                 
+00010c67  C$$EXIT                                          
+00010c67  abort                                            
+00010d54  __TI_Handler_Table_Base                          
+00010d60  __TI_Handler_Table_Limit                         
+00010d68  __TI_CINIT_Base                                  
+00010d78  __TI_CINIT_Limit                                 
+20000000  __start___llvm_prf_cnts                          
+20000000  __stop___llvm_prf_cnts                           
+20000000  angleBuffer                                      
+20000fa0  dutyBuffer                                       
+20001f40  accel_fifo                                       
+200022ac  gyro_fifo                                        
+20002618  mag_fifo                                         
+200029f4  s_bmi160                                         
+20002a18  accelData                                        
+20002a1e  accelxyz                                         
+20002a24  gyroxyz                                          
+20002a2a  gyroData_x                                       
+20002a30  Error                                            
+20002a34  Error_old                                        
+20002a38  PeriodicTask2                                    
+20002a3c  TimerA1Task                                      
+20002a40  Ud                                               
+20002a44  Ui                                               
+20002a48  Up                                               
+20002a4c  Upid                                             
+20002a50  compDeg_fp                                       
+20002a54  g_ui32ByteCount                                  
+20002a58  gyroDeg_fp                                       
+20002a64  pData                                            
+20002a68  pitch                                            
+20002a6c  pitch_fp                                         
+20002a73  LogicData                                        
+20002a74  ui8DummyRead                                     
+20002a75  ui8Status                                        
+20002a78  v_fifo_data_u8                                   
+20002ea8  i2cConfig                                        
+20002ebc  time                                             
+20002ec0  Kp                                               
+20002ec4  Ki                                               
+20002ec8  Kd                                               
+20002ecc  TExaS_ScopeErrLostData                           
+20002ed0  TExaS_ScopeErrConflict                           
+20002ed4  TExaS_ScopeWrnReconfig                           
+20002ed8  CaptureTask0                                     
+20002edc  CaptureTask1                                     
+20002ee0  V_bmm150_maual_auto_condition_u8                 
+20002ee4  V_fifo_time_U32                                  
+20002ee8  SystemCoreClock                                  
+20002eec  burstMode                                        
+20002ef0  _sys_memory                                      
+2000fe00  __stack                                          
+20010000  __STACK_END                                      
+4000480c  WDTCTL_SYM                                       
+ffffffff  __TI_pprof_out_hndl                              
+ffffffff  __TI_prof_data_size                              
+ffffffff  __TI_prof_data_start                             
+ffffffff  __binit__                                        
+ffffffff  __c_args__                                       
+ffffffff  binit                                            
+UNDEFED   __mpu_init                                       
+UNDEFED   _system_post_cinit                               
+
+[620 symbols]
